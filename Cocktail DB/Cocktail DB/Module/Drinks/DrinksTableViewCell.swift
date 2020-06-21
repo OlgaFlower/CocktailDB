@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CocktailTableViewCell: UITableViewCell {
+class DrinksTableViewCell: UITableViewCell {
     
     //MARK: - Outlets
     @IBOutlet weak var cocktailImage: UIImageView!

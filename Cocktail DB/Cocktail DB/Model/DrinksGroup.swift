@@ -1,5 +1,5 @@
 //
-//  CocktailGroup.swift
+//  DrinksGroup.swift
 //  Cocktail DB
 //
 //  Created by Olha Bereziuk on 21.06.2020.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct CocktailGroup: Codable {
+struct DrinksGroup: Codable {
     var categoryGroup: [CocktailCategory]?
     
     private enum CodingKeys: String, CodingKey {
-    case categoryGroup = "drinks"
+        case categoryGroup = "drinks"
     }
 }
 
@@ -20,6 +20,6 @@ struct CocktailCategory: Codable {
     var category: String?
     
     private enum CodingKeys: String, CodingKey {
-    case category = "strCategory"
+        case category = "strCategory"
     }
 }
