@@ -9,6 +9,6 @@
 import Foundation
 
 enum SourceApi: String {
-    case categories = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"
-    case drinks = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c="
+    case categories = "https://thecocktaildb.com/api/json/v1/1/list.php?c=list"
+    case drinks = "https://thecocktaildb.com/api/json/v1/1/filter.php?c="
 }

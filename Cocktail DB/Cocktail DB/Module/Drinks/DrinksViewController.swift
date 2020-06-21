@@ -20,7 +20,7 @@ class DrinksViewController: UIViewController {
 //        tableView.dataSource = self
 //        tableView.tableFooterView = UIView(frame: .zero) //hide lines
         
-        presenter.loadDrinks("Ordinary Drink") { [weak self] drinks in
+        presenter.loadDrinks("Cocktail") { [weak self] drinks in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
