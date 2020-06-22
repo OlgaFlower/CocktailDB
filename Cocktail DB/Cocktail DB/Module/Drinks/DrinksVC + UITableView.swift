@@ -11,7 +11,7 @@ import UIKit
 extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        restoredCategories.count
+        presenter.drinksToDisplay.count
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

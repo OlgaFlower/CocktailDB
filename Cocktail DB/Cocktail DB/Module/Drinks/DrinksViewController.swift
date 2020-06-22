@@ -16,7 +16,7 @@ class DrinksViewController: UIViewController {
     var restoredCategories = [String?]()
     let defaults = UserDefaults.standard
     
-    var drinksToDisplay: [Drinks]?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,8 @@ class DrinksViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         restoreSelectedCategories()
-        print(restoredCategories)
+        print("restoredCategories: \(restoredCategories)")
+        print("Presenter.drinksToDisplay \(presenter.drinksToDisplay)")
     }
     
     func setup() {
