@@ -13,6 +13,8 @@ class DrinksViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let presenter = DrinksPresenter()
+    var selectedCategories = [String?]()
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,8 @@ class DrinksViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        restoreSelectedCategories()
+        print(selectedCategories)
     }
     
     func setup() {
@@ -45,6 +49,10 @@ class DrinksViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.removeSeparator()
+    }
+    
+    func restoreSelectedCategories() {
+        selectedCategories = defaults.object(forKey: "selectedCategories") as? [String] ?? [String]()
     }
     
     @objc func showFilter() {

@@ -15,7 +15,6 @@ class DrinksFilterViewController: UIViewController {
     
     let presenter = DrinksFilterPresenter()
     var selectedCategories = [String?]()
-//    var selectedIndexPaths = [IndexPath]()
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {

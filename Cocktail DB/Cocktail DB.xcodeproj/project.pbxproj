@@ -88,8 +88,8 @@
 			children = (
 				840E025B24A00B6900D01B32 /* DrinksFilterViewController.swift */,
 				8494C1D024A0B730008619C5 /* DrinksFilterVC + UITableView.swift */,
-				840E025F24A00C5900D01B32 /* DrinksFilterPresenter.swift */,
 				840E025D24A00C4100D01B32 /* DrinksFilterTableViewCell.swift */,
+				840E025F24A00C5900D01B32 /* DrinksFilterPresenter.swift */,
 			);
 			path = DrinksFilter;
 			sourceTree = "<group>";
@@ -138,10 +138,10 @@
 		84247FFC249FBF090008359F /* Drinks */ = {
 			isa = PBXGroup;
 			children = (
-				840E0258249FCAEC00D01B32 /* DrinksPresenter.swift */,
 				84247FF7249FB7B80008359F /* DrinksViewController.swift */,
 				8494C1CE24A0A9E6008619C5 /* DrinksVC + UITableView.swift */,
 				84247FFA249FBE750008359F /* DrinksTableViewCell.swift */,
+				840E0258249FCAEC00D01B32 /* DrinksPresenter.swift */,
 			);
 			path = Drinks;
 			sourceTree = "<group>";
