@@ -26,7 +26,8 @@ class DrinksViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        loadCategoryDrinks()
+        restoreSelectedCategories()
+        print("Restored catrgoties \(restoredCategories)")
     }
     
     func setup() {

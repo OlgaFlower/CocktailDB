@@ -11,7 +11,11 @@ import UIKit
 extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        presenter.drinksToDisplay.count
+        if restoredCategories.count != 0 {
+            return restoredCategories.count
+        }
+        return 0
+//        presenter.drinksToDisplay.count
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -22,7 +26,10 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return restoredCategories[section]
+        if restoredCategories.count != 0 {
+            return restoredCategories[section]
+        }
+        return nil
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

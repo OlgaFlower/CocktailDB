@@ -12,10 +12,12 @@ extension DrinksViewController {
     
     func restoreSelectedCategories() {
         restoredCategories = defaults.object(forKey: "selectedCategories") as? [String] ?? [String]()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func loadCategoryDrinks() {
-//        guard let category = restoredCategories.first! else { return }
         presenter.loadDrinks("Cocktail") { [weak self] drinks in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
