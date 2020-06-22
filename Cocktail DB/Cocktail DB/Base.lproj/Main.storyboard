@@ -56,10 +56,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="li1-s1-MVq"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="feF-Hd-OvN"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -88,27 +84,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mV6-4S-R57">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mV6-4S-R57">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="589"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="filterCell" id="ZWQ-1a-RvN" customClass="DrinksFilterTableViewCell" customModule="Cocktail_DB" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZWQ-1a-RvN" id="zxu-uh-9wI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqp-iD-C22">
-                                                    <rect key="frame" x="23" y="16" width="329" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="23" y="36" width="329" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Dqp-iD-C22" secondAttribute="bottom" constant="25" id="JU3-A6-EbK"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Dqp-iD-C22" secondAttribute="trailing" constant="8" id="RDB-BX-TrK"/>
-                                                <constraint firstItem="Dqp-iD-C22" firstAttribute="top" secondItem="zxu-uh-9wI" secondAttribute="topMargin" constant="5" id="jmR-F9-N1Q"/>
+                                                <constraint firstItem="Dqp-iD-C22" firstAttribute="top" secondItem="zxu-uh-9wI" secondAttribute="topMargin" constant="25" id="jmR-F9-N1Q"/>
                                                 <constraint firstItem="Dqp-iD-C22" firstAttribute="leading" secondItem="zxu-uh-9wI" secondAttribute="leadingMargin" constant="8" id="wfS-mh-YHg"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -117,10 +114,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="xLL-Qh-egK" id="YjP-9D-eOA"/>
-                                    <outlet property="delegate" destination="xLL-Qh-egK" id="dxc-9O-B4C"/>
-                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teH-48-RKv">
                                 <rect key="frame" x="27" y="594" width="321" height="53"/>
@@ -132,6 +125,9 @@
                                 <state key="normal" title="APPLY">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="applyButtonTapped:" destination="xLL-Qh-egK" eventType="touchUpInside" id="70k-8i-2TB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -147,6 +143,7 @@
                         <viewLayoutGuide key="safeArea" id="Kvt-fn-rYx"/>
                     </view>
                     <connections>
+                        <outlet property="applyButton" destination="teH-48-RKv" id="kEN-On-Uex"/>
                         <outlet property="tableView" destination="mV6-4S-R57" id="zeI-hd-YvM"/>
                     </connections>
                 </viewController>

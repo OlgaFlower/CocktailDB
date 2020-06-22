@@ -11,8 +11,11 @@ import UIKit
 class DrinksFilterViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var applyButton: UIButton!
     
     let presenter = DrinksFilterPresenter()
+    var choosenCategories = [ChoosenCategory]()
+    var selectedIndexPaths = [IndexPath]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,11 @@ class DrinksFilterViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.removeSeparator()
+        tableView.allowsMultipleSelection = true
+    }
+    
+    @IBAction func applyButtonTapped(_ sender: Any) {
+        
     }
     
 }

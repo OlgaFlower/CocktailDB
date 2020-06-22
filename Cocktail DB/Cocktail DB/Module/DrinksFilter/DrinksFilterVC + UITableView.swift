@@ -20,8 +20,30 @@ extension DrinksFilterViewController: UITableViewDataSource, UITableViewDelegate
         
         guard let drinks = presenter.drinksGroup?.categoryGroup else { return UITableViewCell() }
         
+        if selectedIndexPaths.contains(indexPath) {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
+        
         cell.categoryNameLabel.text = drinks[indexPath.row].category
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if selectedIndexPaths.contains(indexPath) {
+            selectedIndexPaths.removeAll { (selectedIndexpath) -> Bool in
+                selectedIndexpath == indexPath
+            }
+            tableView.reloadRows(at: [indexPath], with: .fade)
+            
+        } else {
+            selectedIndexPaths.append(indexPath)
+            tableView.reloadRows(at: [indexPath], with: .fade)
+        }
+        
+        
     }
 }
