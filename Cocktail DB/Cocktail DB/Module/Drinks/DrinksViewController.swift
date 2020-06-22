@@ -13,10 +13,12 @@ class DrinksViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let presenter = DrinksPresenter()
-    let limit = 10
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero) //hide lines
         
         presenter.loadDrinks("Cocktail") { [weak self] drinks in
@@ -29,7 +31,7 @@ class DrinksViewController: UIViewController {
     
 }
 
-extension DrinksViewController: UITableViewDataSource {
+extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         1
@@ -42,14 +44,16 @@ extension DrinksViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath) as! DrinksTableViewCell
+        let imageURL = presenter.drinksList?.drinks?[indexPath.row].imageURL
         cell.selectionStyle = .none
         cell.cocktailNameLabel.text = presenter.drinksList?.drinks?[indexPath.row].name
         DispatchQueue.main.async {
-            self.presenter.displayDrinkImage(self.presenter.drinksList?.drinks?[indexPath.row].imageURL, cell.cocktailImage)
+            self.presenter.displayDrinkImage(imageURL, cell.cocktailImage)
         }
         
         return cell
     }
+    
     
 }
 

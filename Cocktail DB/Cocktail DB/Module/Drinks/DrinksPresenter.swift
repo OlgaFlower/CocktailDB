@@ -12,6 +12,7 @@ class DrinksPresenter {
     
     var drinksList: Drinks?
     
+    
     func loadDrinks(_ category: String, completion: @escaping (Drinks) -> Void) {
         NetworkManager.shared.fetchDrinksByCategory(category) { [weak self] drinks in
             self?.drinksList = drinks
@@ -29,17 +30,3 @@ class DrinksPresenter {
     }
 
 }
-
-//if rocketDetail?.imageURL != nil {
-//
-//        let url = URL(string: rocketDetail!.imageURL!)!
-//        UIImage.loadRocketImageFrom(url: url) { image in
-//        self.rocketImageView.image = image
-//        }
-//    } else {
-//        let image = UIImage(named: "errorRocketImage.png")
-//        errorImage.image = image
-//        self.errorImageLabel.text = "Unfortunately here isn't any picture :("
-//    }
-//
-//}
