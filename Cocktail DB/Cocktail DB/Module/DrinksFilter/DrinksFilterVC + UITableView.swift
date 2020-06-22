@@ -32,18 +32,26 @@ extension DrinksFilterViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let categories = presenter.drinksGroup?.categoryGroup else { return }
         
         if selectedIndexPaths.contains(indexPath) {
+            //Remove checkmark
             selectedIndexPaths.removeAll { (selectedIndexpath) -> Bool in
                 selectedIndexpath == indexPath
             }
+            //Remove item from selected categories
+            selectedCategories.removeAll { (selectedCategory) -> Bool in
+                selectedCategory == categories[indexPath.row].category
+            }
+            print("After remove: \(selectedCategories)")
             tableView.reloadRows(at: [indexPath], with: .fade)
             
         } else {
+            //Add checkmark and selected category
             selectedIndexPaths.append(indexPath)
+            selectedCategories.append(categories[indexPath.row].category)
+            print("After add: \(selectedCategories)")
             tableView.reloadRows(at: [indexPath], with: .fade)
         }
-        
-        
     }
 }

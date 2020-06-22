@@ -14,7 +14,7 @@ class DrinksFilterViewController: UIViewController {
     @IBOutlet weak var applyButton: UIButton!
     
     let presenter = DrinksFilterPresenter()
-    var choosenCategories = [ChoosenCategory]()
+    var selectedCategories = [String?]()
     var selectedIndexPaths = [IndexPath]()
     
     override func viewDidLoad() {
