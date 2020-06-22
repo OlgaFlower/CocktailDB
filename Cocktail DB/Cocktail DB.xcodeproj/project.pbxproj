@@ -25,6 +25,7 @@
 		8451D03924A0254700CA4C1C /* UIImageFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451D03824A0254700CA4C1C /* UIImageFromURL.swift */; };
 		8494C1CD24A0A847008619C5 /* UINavController + Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494C1CC24A0A847008619C5 /* UINavController + Shadow.swift */; };
 		8494C1CF24A0A9E6008619C5 /* DrinksVC + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494C1CE24A0A9E6008619C5 /* DrinksVC + UITableView.swift */; };
+		8494C1D124A0B730008619C5 /* DrinksFilterVC + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494C1D024A0B730008619C5 /* DrinksFilterVC + UITableView.swift */; };
 		84FF9D4424A07F32008868FE /* UITableView + HideSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF9D4324A07F32008868FE /* UITableView + HideSeparator.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		8451D03824A0254700CA4C1C /* UIImageFromURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageFromURL.swift; sourceTree = "<group>"; };
 		8494C1CC24A0A847008619C5 /* UINavController + Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavController + Shadow.swift"; sourceTree = "<group>"; };
 		8494C1CE24A0A9E6008619C5 /* DrinksVC + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinksVC + UITableView.swift"; sourceTree = "<group>"; };
+		8494C1D024A0B730008619C5 /* DrinksFilterVC + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinksFilterVC + UITableView.swift"; sourceTree = "<group>"; };
 		84FF9D4324A07F32008868FE /* UITableView + HideSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + HideSeparator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				840E025B24A00B6900D01B32 /* DrinksFilterViewController.swift */,
+				8494C1D024A0B730008619C5 /* DrinksFilterVC + UITableView.swift */,
 				840E025F24A00C5900D01B32 /* DrinksFilterPresenter.swift */,
 				840E025D24A00C4100D01B32 /* DrinksFilterTableViewCell.swift */,
 			);
@@ -245,6 +248,7 @@
 				840E026224A0168600D01B32 /* Drinks.swift in Sources */,
 				84247FF8249FB7B80008359F /* DrinksViewController.swift in Sources */,
 				84247FFB249FBE750008359F /* DrinksTableViewCell.swift in Sources */,
+				8494C1D124A0B730008619C5 /* DrinksFilterVC + UITableView.swift in Sources */,
 				840E026024A00C5900D01B32 /* DrinksFilterPresenter.swift in Sources */,
 				840E0252249FC13900D01B32 /* DrinksGroup.swift in Sources */,
 				8451D03924A0254700CA4C1C /* UIImageFromURL.swift in Sources */,

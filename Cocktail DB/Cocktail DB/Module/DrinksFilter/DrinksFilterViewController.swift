@@ -16,6 +16,7 @@ class DrinksFilterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
         presenter.loadCocktailGroup { [weak self] group in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
@@ -23,22 +24,12 @@ class DrinksFilterViewController: UIViewController {
         }
     }
     
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.removeSeparator()
+    }
+    
 }
 
-extension DrinksFilterViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.drinksGroup?.categoryGroup?.count ?? 0
-        
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath) as! DrinksFilterTableViewCell
-        
-        guard let drinks = presenter.drinksGroup?.categoryGroup else { return UITableViewCell() }
-        
-        cell.categoryNameLabel.text = drinks[indexPath.row].category
-        
-        return cell
-    }
-}
+

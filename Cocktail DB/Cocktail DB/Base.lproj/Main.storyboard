@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wde-VG-cxH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wde-VG-cxH">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -88,8 +88,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mV6-4S-R57">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mV6-4S-R57">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="589"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="filterCell" id="ZWQ-1a-RvN" customClass="DrinksFilterTableViewCell" customModule="Cocktail_DB" customModuleProvider="target">
@@ -122,12 +122,26 @@
                                     <outlet property="delegate" destination="xLL-Qh-egK" id="dxc-9O-B4C"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teH-48-RKv">
+                                <rect key="frame" x="27" y="594" width="321" height="53"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="tKa-Zk-zg6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="APPLY">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="mV6-4S-R57" firstAttribute="bottom" secondItem="Kvt-fn-rYx" secondAttribute="bottom" id="Lel-rM-AXf"/>
+                            <constraint firstItem="Kvt-fn-rYx" firstAttribute="bottom" secondItem="teH-48-RKv" secondAttribute="bottom" constant="20" id="cxd-h9-1hf"/>
                             <constraint firstItem="mV6-4S-R57" firstAttribute="trailing" secondItem="Kvt-fn-rYx" secondAttribute="trailing" id="ddj-5Z-SZP"/>
                             <constraint firstItem="mV6-4S-R57" firstAttribute="top" secondItem="Kvt-fn-rYx" secondAttribute="top" id="lhe-lQ-bns"/>
+                            <constraint firstItem="teH-48-RKv" firstAttribute="top" secondItem="mV6-4S-R57" secondAttribute="bottom" constant="5" id="qV7-r6-cuI"/>
+                            <constraint firstItem="teH-48-RKv" firstAttribute="leading" secondItem="Kvt-fn-rYx" secondAttribute="leading" constant="27" id="sAt-Fy-QH7"/>
+                            <constraint firstItem="Kvt-fn-rYx" firstAttribute="trailing" secondItem="teH-48-RKv" secondAttribute="trailing" constant="27" id="tFK-o3-fBt"/>
                             <constraint firstItem="mV6-4S-R57" firstAttribute="leading" secondItem="Kvt-fn-rYx" secondAttribute="leading" id="vjg-Ar-V5A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kvt-fn-rYx"/>
