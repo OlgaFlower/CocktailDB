@@ -13,22 +13,20 @@ class DrinksViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let presenter = DrinksPresenter()
+    
     var restoredCategories = [String?]()
     let defaults = UserDefaults.standard
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        
+        restoreSelectedCategories()
+        loadCategoryDrinks()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        restoreSelectedCategories()
-        print("restoredCategories: \(restoredCategories)")
-        print("Presenter.drinksToDisplay \(presenter.drinksToDisplay)")
+//        loadCategoryDrinks()
     }
     
     func setup() {
@@ -48,27 +46,6 @@ class DrinksViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.removeSeparator()
-    }
-    
-    func restoreSelectedCategories() {
-        restoredCategories = defaults.object(forKey: "selectedCategories") as? [String] ?? [String]()
-        loadFirstSelectedDrinksCategory()
-        tableView.reloadData()
-    }
-    
-    func loadFirstSelectedDrinksCategory() {
-        if !restoredCategories.isEmpty {
-            guard let category = restoredCategories.first! else { return }
-            loadSelectedDrinks(category)
-        }
-    }
-    
-    func loadSelectedDrinks(_ drinksToDisplay: String) {
-        presenter.loadDrinks(drinksToDisplay) { [weak self] drinks in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
     }
     
     @objc func showFilter() {

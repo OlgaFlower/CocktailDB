@@ -23,6 +23,7 @@
 		84247FF8249FB7B80008359F /* DrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84247FF7249FB7B80008359F /* DrinksViewController.swift */; };
 		84247FFB249FBE750008359F /* DrinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84247FFA249FBE750008359F /* DrinksTableViewCell.swift */; };
 		8451D03924A0254700CA4C1C /* UIImageFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451D03824A0254700CA4C1C /* UIImageFromURL.swift */; };
+		849400AB24A1177E004FE3B6 /* DrinksVC + HandleFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849400AA24A1177E004FE3B6 /* DrinksVC + HandleFilters.swift */; };
 		8494C1CD24A0A847008619C5 /* UINavController + Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494C1CC24A0A847008619C5 /* UINavController + Shadow.swift */; };
 		8494C1CF24A0A9E6008619C5 /* DrinksVC + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494C1CE24A0A9E6008619C5 /* DrinksVC + UITableView.swift */; };
 		8494C1D124A0B730008619C5 /* DrinksFilterVC + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494C1D024A0B730008619C5 /* DrinksFilterVC + UITableView.swift */; };
@@ -48,6 +49,7 @@
 		84247FF7249FB7B80008359F /* DrinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksViewController.swift; sourceTree = "<group>"; };
 		84247FFA249FBE750008359F /* DrinksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksTableViewCell.swift; sourceTree = "<group>"; };
 		8451D03824A0254700CA4C1C /* UIImageFromURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageFromURL.swift; sourceTree = "<group>"; };
+		849400AA24A1177E004FE3B6 /* DrinksVC + HandleFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinksVC + HandleFilters.swift"; sourceTree = "<group>"; };
 		8494C1CC24A0A847008619C5 /* UINavController + Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavController + Shadow.swift"; sourceTree = "<group>"; };
 		8494C1CE24A0A9E6008619C5 /* DrinksVC + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinksVC + UITableView.swift"; sourceTree = "<group>"; };
 		8494C1D024A0B730008619C5 /* DrinksFilterVC + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinksFilterVC + UITableView.swift"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				84247FF7249FB7B80008359F /* DrinksViewController.swift */,
+				849400AA24A1177E004FE3B6 /* DrinksVC + HandleFilters.swift */,
 				8494C1CE24A0A9E6008619C5 /* DrinksVC + UITableView.swift */,
 				84247FFA249FBE750008359F /* DrinksTableViewCell.swift */,
 				840E0258249FCAEC00D01B32 /* DrinksPresenter.swift */,
@@ -245,6 +248,7 @@
 				84247FE4249FB69A0008359F /* AppDelegate.swift in Sources */,
 				8494C1CF24A0A9E6008619C5 /* DrinksVC + UITableView.swift in Sources */,
 				84247FE6249FB69A0008359F /* SceneDelegate.swift in Sources */,
+				849400AB24A1177E004FE3B6 /* DrinksVC + HandleFilters.swift in Sources */,
 				840E026224A0168600D01B32 /* Drinks.swift in Sources */,
 				84247FF8249FB7B80008359F /* DrinksViewController.swift in Sources */,
 				84247FFB249FBE750008359F /* DrinksTableViewCell.swift in Sources */,
