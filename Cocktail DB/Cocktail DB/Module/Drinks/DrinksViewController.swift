@@ -20,13 +20,12 @@ class DrinksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        restoreSelectedCategories()
-        loadCategoryDrinks()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        restoreSelectedCategories()
+        displayDrinks()
         print("Restored catrgoties \(restoredCategories)")
     }
     

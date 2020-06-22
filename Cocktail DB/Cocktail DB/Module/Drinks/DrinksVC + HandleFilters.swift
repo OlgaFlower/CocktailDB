@@ -10,6 +10,13 @@ import Foundation
 
 extension DrinksViewController {
     
+    func displayDrinks() {
+        restoreSelectedCategories()
+        if !restoredCategories.isEmpty {
+            loadCategoryDrinks()
+        } else { return }
+    }
+    
     func restoreSelectedCategories() {
         restoredCategories = defaults.object(forKey: "selectedCategories") as? [String] ?? [String]()
         DispatchQueue.main.async {
