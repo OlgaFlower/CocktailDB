@@ -28,12 +28,15 @@ class DrinksFilterViewController: UIViewController {
 extension DrinksFilterViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        presenter.drinksGroup?.categoryGroup?.count ?? 0
+        return presenter.drinksGroup?.categoryGroup?.count ?? 0
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath) as! DrinksFilterTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath) as! DrinksFilterTableViewCell
+        
         guard let drinks = presenter.drinksGroup?.categoryGroup else { return UITableViewCell() }
+        
         cell.categoryNameLabel.text = drinks[indexPath.row].category
         
         return cell

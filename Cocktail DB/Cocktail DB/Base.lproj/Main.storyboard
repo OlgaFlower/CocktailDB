@@ -83,7 +83,7 @@
         <!--Drinks Filter View Controller-->
         <scene sceneID="uK6-q3-pfl">
             <objects>
-                <viewController storyboardIdentifier="FilterViewController" id="xLL-Qh-egK" customClass="DrinksFilterViewController" customModule="Cocktail_DB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DrinksFilterViewController" id="xLL-Qh-egK" customClass="DrinksFilterViewController" customModule="Cocktail_DB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3FH-Cm-FFO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
