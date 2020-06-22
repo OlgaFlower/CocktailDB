@@ -17,8 +17,7 @@ class DrinksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.dataSource = self
-//        tableView.tableFooterView = UIView(frame: .zero) //hide lines
+        tableView.tableFooterView = UIView(frame: .zero) //hide lines
         
         presenter.loadDrinks("Cocktail") { [weak self] drinks in
             DispatchQueue.main.async {
@@ -45,8 +44,14 @@ extension DrinksViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath) as! DrinksTableViewCell
         cell.selectionStyle = .none
         cell.cocktailNameLabel.text = presenter.drinksList?.drinks?[indexPath.row].name
+        DispatchQueue.main.async {
+            self.presenter.displayDrinkImage(self.presenter.drinksList?.drinks?[indexPath.row].imageURL, cell.cocktailImage)
+        }
+        
         return cell
     }
     
-    
 }
+
+
+
