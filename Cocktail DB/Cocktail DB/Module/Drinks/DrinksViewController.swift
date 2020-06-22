@@ -17,9 +17,7 @@ class DrinksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.tableFooterView = UIView(frame: .zero) //hide lines
+        setup()
         
         presenter.loadDrinks("Cocktail") { [weak self] drinks in
             DispatchQueue.main.async {
@@ -28,7 +26,21 @@ class DrinksViewController: UIViewController {
         }
     }
     
+    func setup() {
+        setupNavBarItems()
+        setupTableView()
+    }
     
+    func setupNavBarItems() {
+        let viewName = UIBarButtonItem(title: "Drinks", style: .plain, target: self, action: nil)
+        navigationItem.leftBarButtonItem = viewName
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.removeSeparator()
+    }
 }
 
 extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
@@ -54,6 +66,13 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        guard let drinks = presenter.drinksList?.drinks else { return }
+//        let lastItem = drinks.count - 1
+//        if indexPath.row == lastItem {
+//
+//        }
+//    }
     
 }
 

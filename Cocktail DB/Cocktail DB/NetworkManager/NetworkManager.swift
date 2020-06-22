@@ -44,7 +44,6 @@ final class NetworkManager {
             }
             do {
                 let drinks = try JSONDecoder().decode(Drinks.self, from: data)
-                print(drinks)
                 completion(drinks)
                 } catch {
                     print("API: Error JSON decoding")
