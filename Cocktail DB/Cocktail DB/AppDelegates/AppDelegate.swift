@@ -11,11 +11,15 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UINavigationBar.appearance().tintColor = UIColor.black
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: UIFont.Weight.medium)], for: .normal)
+        
+        let appearance = UINavigationBar.appearance()
+        let item = UIBarButtonItem.appearance()
+        
+        item.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: UIFont.Weight.medium)], for: .normal)
+        appearance.tintColor = .black
+        appearance.barTintColor = .white
+        
         return true
     }
 
@@ -35,4 +39,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
 

@@ -23,7 +23,8 @@
 		84247FF8249FB7B80008359F /* DrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84247FF7249FB7B80008359F /* DrinksViewController.swift */; };
 		84247FFB249FBE750008359F /* DrinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84247FFA249FBE750008359F /* DrinksTableViewCell.swift */; };
 		8451D03924A0254700CA4C1C /* UIImageFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451D03824A0254700CA4C1C /* UIImageFromURL.swift */; };
-		84FF9D4424A07F32008868FE /* UITableView + hideSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF9D4324A07F32008868FE /* UITableView + hideSeparator.swift */; };
+		8494C1CD24A0A847008619C5 /* UINavController + Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494C1CC24A0A847008619C5 /* UINavController + Shadow.swift */; };
+		84FF9D4424A07F32008868FE /* UITableView + HideSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF9D4324A07F32008868FE /* UITableView + HideSeparator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +46,8 @@
 		84247FF7249FB7B80008359F /* DrinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksViewController.swift; sourceTree = "<group>"; };
 		84247FFA249FBE750008359F /* DrinksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksTableViewCell.swift; sourceTree = "<group>"; };
 		8451D03824A0254700CA4C1C /* UIImageFromURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageFromURL.swift; sourceTree = "<group>"; };
-		84FF9D4324A07F32008868FE /* UITableView + hideSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + hideSeparator.swift"; sourceTree = "<group>"; };
+		8494C1CC24A0A847008619C5 /* UINavController + Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavController + Shadow.swift"; sourceTree = "<group>"; };
+		84FF9D4324A07F32008868FE /* UITableView + HideSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + HideSeparator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				8451D03824A0254700CA4C1C /* UIImageFromURL.swift */,
-				84FF9D4324A07F32008868FE /* UITableView + hideSeparator.swift */,
+				84FF9D4324A07F32008868FE /* UITableView + HideSeparator.swift */,
+				8494C1CC24A0A847008619C5 /* UINavController + Shadow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -227,10 +230,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8494C1CD24A0A847008619C5 /* UINavController + Shadow.swift in Sources */,
 				840E0259249FCAEC00D01B32 /* DrinksPresenter.swift in Sources */,
 				840E0257249FC3D800D01B32 /* SourceApi.swift in Sources */,
 				840E0255249FC30100D01B32 /* NetworkManager.swift in Sources */,
-				84FF9D4424A07F32008868FE /* UITableView + hideSeparator.swift in Sources */,
+				84FF9D4424A07F32008868FE /* UITableView + HideSeparator.swift in Sources */,
 				840E025C24A00B6900D01B32 /* DrinksFilterViewController.swift in Sources */,
 				84247FE4249FB69A0008359F /* AppDelegate.swift in Sources */,
 				84247FE6249FB69A0008359F /* SceneDelegate.swift in Sources */,

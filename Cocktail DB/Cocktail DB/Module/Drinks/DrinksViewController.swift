@@ -19,6 +19,8 @@ class DrinksViewController: UIViewController {
         super.viewDidLoad()
         setup()
         
+        
+        
         presenter.loadDrinks("Cocktail") { [weak self] drinks in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
@@ -34,12 +36,19 @@ class DrinksViewController: UIViewController {
     func setupNavBarItems() {
         let viewName = UIBarButtonItem(title: "Drinks", style: .plain, target: self, action: nil)
         navigationItem.leftBarButtonItem = viewName
+        let filter = UIBarButtonItem(image: UIImage(named: "filter.png"), style: .plain, target: self, action: #selector(showFilter))
+        navigationItem.rightBarButtonItem = filter
+        self.navigationController?.displayNavbarShadow()
     }
     
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.removeSeparator()
+    }
+    
+    @objc func showFilter() {
+        
     }
 }
 
@@ -75,6 +84,4 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
 //    }
     
 }
-
-
 
