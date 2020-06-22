@@ -6,6 +6,7 @@
 //  Copyright © 2020 Olha Bereziuk. All rights reserved.
 //
 
+
 import UIKit
 
 extension DrinksFilterViewController: UITableViewDataSource, UITableViewDelegate {
@@ -20,8 +21,9 @@ extension DrinksFilterViewController: UITableViewDataSource, UITableViewDelegate
         
         guard let drinks = presenter.drinksGroup?.categoryGroup else { return UITableViewCell() }
         
-        if selectedIndexPaths.contains(indexPath) {
+        if selectedCategories.contains(drinks[indexPath.row].category) {
             cell.accessoryType = .checkmark
+            
         } else {
             cell.accessoryType = .none
         }
@@ -32,13 +34,10 @@ extension DrinksFilterViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         guard let categories = presenter.drinksGroup?.categoryGroup else { return }
         
-        if selectedIndexPaths.contains(indexPath) {
-            //Remove checkmark
-            selectedIndexPaths.removeAll { (selectedIndexpath) -> Bool in
-                selectedIndexpath == indexPath
-            }
+        if selectedCategories.contains(categories[indexPath.row].category) {
             //Remove item from selected categories
             selectedCategories.removeAll { (selectedCategory) -> Bool in
                 selectedCategory == categories[indexPath.row].category
@@ -48,10 +47,11 @@ extension DrinksFilterViewController: UITableViewDataSource, UITableViewDelegate
             
         } else {
             //Add checkmark and selected category
-            selectedIndexPaths.append(indexPath)
             selectedCategories.append(categories[indexPath.row].category)
             print("After add: \(selectedCategories)")
             tableView.reloadRows(at: [indexPath], with: .fade)
         }
     }
+    
+    
 }

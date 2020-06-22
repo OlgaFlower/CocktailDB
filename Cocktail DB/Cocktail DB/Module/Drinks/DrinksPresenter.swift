@@ -12,7 +12,6 @@ class DrinksPresenter {
     
     var drinksList: Drinks?
     
-    
     func loadDrinks(_ category: String, completion: @escaping (Drinks) -> Void) {
         NetworkManager.shared.fetchDrinksByCategory(category) { [weak self] drinks in
             self?.drinksList = drinks

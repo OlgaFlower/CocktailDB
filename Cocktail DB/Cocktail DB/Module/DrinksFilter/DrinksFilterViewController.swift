@@ -15,16 +15,23 @@ class DrinksFilterViewController: UIViewController {
     
     let presenter = DrinksFilterPresenter()
     var selectedCategories = [String?]()
-    var selectedIndexPaths = [IndexPath]()
+//    var selectedIndexPaths = [IndexPath]()
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+        setup()
+        
         presenter.loadCocktailGroup { [weak self] group in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }
+    }
+    
+    func setup() {
+        setupTableView()
+        restoreSelectedCategories()
     }
     
     func setupTableView() {
@@ -34,8 +41,13 @@ class DrinksFilterViewController: UIViewController {
         tableView.allowsMultipleSelection = true
     }
     
+    func restoreSelectedCategories() {
+        selectedCategories = defaults.object(forKey: "selectedCategories") as? [String] ?? [String]()
+    }
+    
     @IBAction func applyButtonTapped(_ sender: Any) {
-        
+        defaults.set(selectedCategories, forKey: "selectedCategories")
+        _ = navigationController?.popViewController(animated: true)
     }
     
 }
