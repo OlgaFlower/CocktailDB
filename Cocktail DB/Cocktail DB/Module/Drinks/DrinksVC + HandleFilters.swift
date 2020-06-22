@@ -18,7 +18,8 @@ extension DrinksViewController {
     }
     
     func restoreSelectedCategories() {
-        restoredCategories = defaults.object(forKey: "selectedCategories") as? [String] ?? [String]()
+        let categories = defaults.object(forKey: "selectedCategories") as? [String] ?? [String]()
+        self.restoredCategories = categories.sorted()
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
