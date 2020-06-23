@@ -32,8 +32,16 @@ final class NetworkManager {
     }
     
     func fetchDrinksByCategory(_ category: String, completion: @escaping (Drinks) -> Void) {
-        let urlString = SourceApi.drinks.rawValue + category
+        
+        var urlString = SourceApi.drinks.rawValue
+        if category.contains(" ") {
+            urlString += category.replacingOccurrences(of: " ", with: "_")
+        } else {
+            urlString += category
+        }
+        
         guard let url = URL(string: urlString) else { return }
+        print(url)
         URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil {
                 print("API: \(error!.localizedDescription)")

@@ -14,9 +14,13 @@ extension DrinksViewController {
         cleanAllDrinksArr()
         restoreSelectedCategories()
         if !restoredCategories.isEmpty {
-            loadCategoryDrinks()
-        } else {
-            tableView.reloadData()
+            guard let firstCategoryToLoad = restoredCategories.first! else { return }
+            loadCategoryDrinks(firstCategoryToLoad)
+        }
+        else {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
             return
             
         }
@@ -31,8 +35,8 @@ extension DrinksViewController {
         self.restoredCategories = categories.sorted()
     }
     
-    func loadCategoryDrinks() {
-        presenter.loadDrinks("Cocktail") { [weak self] drinks in
+    func loadCategoryDrinks(_ category: String) {
+        presenter.loadDrinks(category) { [weak self] drinks in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }

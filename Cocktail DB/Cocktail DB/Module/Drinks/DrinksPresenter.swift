@@ -10,7 +10,6 @@ import UIKit
 
 class DrinksPresenter {
     
-//    var drinksList: Drinks?
     var allDrinksToDisplay = [Drinks?]()
     
     func loadDrinks(_ category: String, completion: @escaping (Drinks) -> Void) {
