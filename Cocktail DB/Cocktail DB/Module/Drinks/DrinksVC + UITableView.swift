@@ -50,27 +50,22 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
         guard let currentCategory = presenter.allDrinksToDisplay[indexPath.section] else { return }
         guard let itemsCount = currentCategory.drinks?.count else { return }
         
-        if indexPath.row == itemsCount - 1 {
-            print("last category item")
-            print("indexPath.section \(indexPath.section)")
-            let nextSection = indexPath.section + 1
-            if nextSection < restoredCategories.count {
-                guard let nextCategory = restoredCategories[nextSection] else {
-                    print("RETURNED guard let nextCategory = restoredCategories[nextSection]")
-                    return }
-                loadCategoryDrinks(nextCategory)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if tableView.visibleCells.contains(cell) {
+                
+                if indexPath.row == itemsCount - 1 {
+                    
+                    if self.presenter.allDrinksToDisplay.count < self.restoredCategories.count {
+                        let nextSection = indexPath.section + 1
+                        guard let nextCategory = self.restoredCategories[nextSection] else { return }
+                        self.loadCategoryDrinks(nextCategory)
+                    }
+                }
+                
             }
         }
-        print("presenter.allDrinksToDisplay.count = \(presenter.allDrinksToDisplay.count)")
     }
     
 }
 
-//let lastItem = self.mes.count - 1
-//if indexPath.row == lastItem {
-//    print("IndexRow\(indexPath.row)")
-//    if currentPage < totalPage {
-//        currentPage += 1
-//       //Get data from Server
-//    }
-//}
+

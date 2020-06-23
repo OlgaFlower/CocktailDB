@@ -16,6 +16,7 @@ extension DrinksViewController {
         if !restoredCategories.isEmpty {
             guard let firstCategoryToLoad = restoredCategories.first! else { return }
             loadCategoryDrinks(firstCategoryToLoad)
+            
         }
         else {
             DispatchQueue.main.async {
