@@ -20,6 +20,7 @@ class DrinksViewController: UIViewController {
     let presenter = DrinksPresenter()
     
     var restoredCategories = [String?]()
+    var categoryTitles = [String?]()
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {

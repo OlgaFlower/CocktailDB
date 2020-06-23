@@ -32,6 +32,7 @@ extension DrinksViewController {
     func restoreSelectedCategories() {
         let categories = self.defaults.object(forKey: "selectedCategories") as? [String] ?? [String]()
         self.restoredCategories = categories.sorted()
+        self.categoryTitles = restoredCategories
     }
     
     func loadCategoryDrinks(_ category: String) {
