@@ -16,13 +16,9 @@ extension DrinksViewController {
         if !restoredCategories.isEmpty {
             guard let firstCategoryToLoad = restoredCategories.first! else { return }
             loadCategoryDrinks(firstCategoryToLoad)
-            restoredCategories.removeFirst()
-            print("restoredCategories.removeFirst() : \(restoredCategories)")
         }
         else {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            tableView.reloadData()
             return
             
         }
@@ -40,7 +36,7 @@ extension DrinksViewController {
     func loadCategoryDrinks(_ category: String) {
         presenter.loadDrinks(category) { [weak self] drinks in
             DispatchQueue.main.async {
-                self?.tableView.reloadData()
+            self?.tableView.reloadData()
             }
         }
     }

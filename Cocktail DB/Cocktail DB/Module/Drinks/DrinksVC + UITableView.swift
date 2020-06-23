@@ -45,34 +45,53 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        guard let currentCategory = presenter.allDrinksToDisplay[indexPath.section] else { return }
-        guard let itemsCount = currentCategory.drinks?.count else { return }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            if tableView.visibleCells.contains(cell) {
+        if indexPath.section == self.presenter.allDrinksToDisplay.count - 1 && indexPath.section < restoredCategories.count {
+                print("indexPath.section = \(indexPath.section)")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                guard let currentCategory = self.presenter.allDrinksToDisplay[indexPath.section] else { return }
+                guard let itemsCount = currentCategory.drinks?.count else { return }
                 
                 if indexPath.row == itemsCount - 1 {
+                    print("indexPath.row = \(indexPath.row)")
                     
                     if !self.restoredCategories.isEmpty {
-                        guard let nextCategory = self.restoredCategories.first! else { return }
-                        print("let nextCategory = self.restoredCategories.first! : \(nextCategory)")
-                        self.restoredCategories.removeFirst()
+                        guard let nextCategory = self.restoredCategories[indexPath.section] else { return }
                         self.loadCategoryDrinks(nextCategory)
                         
                     }
-                    
-//                    if self.presenter.allDrinksToDisplay.count < self.restoredCategories.count {
-//                        let nextSection = indexPath.section + 1
-//                        guard let nextCategory = self.restoredCategories[nextSection] else { return }
-//                        self.loadCategoryDrinks(nextCategory)
-//                    }
                 }
-                
             }
+            
         }
+        
     }
+        
+        
+        
+        
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+//            if tableView.visibleCells.contains(cell) {
+//
+//                if indexPath.row == itemsCount - 1 {
+//
+//                    if !self.restoredCategories.isEmpty {
+//                        guard let nextCategory = self.restoredCategories.first! else { return }
+//                        self.restoredCategories.removeFirst()
+//                        self.loadCategoryDrinks(nextCategory)
+//
+//                    }
+//                }
+//
+//            }
+//        }
+    
+    
+    
     
 }
 
