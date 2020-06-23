@@ -15,6 +15,7 @@ extension DrinksViewController {
         restoreSelectedCategories()
         if !restoredCategories.isEmpty {
             guard let firstCategoryToLoad = restoredCategories.first! else { return }
+            restoredCategories.removeFirst()
             loadCategoryDrinks(firstCategoryToLoad)
         }
         else {

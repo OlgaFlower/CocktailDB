@@ -21,10 +21,9 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        print("titleForHeaderInSection section: \(section)")
-//        return "uuu"
-//    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return restoredCategories[section]
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.allDrinksToDisplay[section]?.drinks?.count ?? 0
@@ -48,7 +47,6 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        
         if indexPath.section == self.presenter.allDrinksToDisplay.count - 1 && indexPath.section < restoredCategories.count {
                 print("indexPath.section = \(indexPath.section)")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -65,7 +63,6 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
                     }
                 }
             }
-            
         }
         
     }
