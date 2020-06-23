@@ -10,13 +10,12 @@ import UIKit
 
 class DrinksPresenter {
     
-    var drinksList: Drinks?
-    var drinksToDisplay: [Drinks?]?
+//    var drinksList: Drinks?
+    var allDrinksToDisplay = [Drinks?]()
     
     func loadDrinks(_ category: String, completion: @escaping (Drinks) -> Void) {
         NetworkManager.shared.fetchDrinksByCategory(category) { [weak self] drinks in
-            self?.drinksList = drinks
-            self?.drinksToDisplay?.append(drinks)
+            self?.allDrinksToDisplay.append(drinks)
             completion(drinks)
         }
     }

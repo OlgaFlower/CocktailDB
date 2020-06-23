@@ -11,11 +11,7 @@ import UIKit
 extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if restoredCategories.count != 0 {
-            return restoredCategories.count
-        }
-        return 0
-//        presenter.drinksToDisplay.count
+        return presenter.allDrinksToDisplay.count
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -26,21 +22,22 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if restoredCategories.count != 0 {
             return restoredCategories[section]
-        }
-        return nil
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        presenter.drinksList?.drinks?.count ?? 0
+        return presenter.allDrinksToDisplay[section]?.drinks?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let section = presenter.allDrinksToDisplay[indexPath.section] else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath) as! DrinksTableViewCell
-        let imageURL = presenter.drinksList?.drinks?[indexPath.row].imageURL
         cell.selectionStyle = .none
-        cell.cocktailNameLabel.text = presenter.drinksList?.drinks?[indexPath.row].name
+        
+        cell.cocktailNameLabel.text = section.drinks?[indexPath.row].name
+        
+        let imageURL = section.drinks?[indexPath.row].imageURL
         DispatchQueue.main.async {
             self.presenter.displayDrinkImage(imageURL, cell.cocktailImage)
         }

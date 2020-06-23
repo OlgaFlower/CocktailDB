@@ -11,18 +11,24 @@ import Foundation
 extension DrinksViewController {
     
     func displayDrinks() {
+        cleanAllDrinksArr()
         restoreSelectedCategories()
         if !restoredCategories.isEmpty {
             loadCategoryDrinks()
-        } else { return }
+        } else {
+            tableView.reloadData()
+            return
+            
+        }
+    }
+    
+    func cleanAllDrinksArr() {
+        presenter.allDrinksToDisplay.removeAll()
     }
     
     func restoreSelectedCategories() {
-        let categories = defaults.object(forKey: "selectedCategories") as? [String] ?? [String]()
+        let categories = self.defaults.object(forKey: "selectedCategories") as? [String] ?? [String]()
         self.restoredCategories = categories.sorted()
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
     }
     
     func loadCategoryDrinks() {
