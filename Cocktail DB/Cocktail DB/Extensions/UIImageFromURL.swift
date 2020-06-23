@@ -8,20 +8,42 @@
 
 import UIKit
 
-extension UIImage {
+// creating an imageCache private instance
+private  let imageCache = NSCache<NSString, UIImage>()
+
+
+extension UIImageView {
     
-    public static func loadImageFrom(url: URL, complition: @escaping (_ image: UIImage?) -> ()) {
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url) {
-                DispatchQueue.main.async {
-                    complition(UIImage(data: data))
+    func loadImageFromURL(_ URLString: String, placeHolder: UIImage?) {
+        
+        self.image = nil
+        //Handle possibility to have space in (imageURL's) image name
+        let imageServerUrl = URLString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        if let cachedImage = imageCache.object(forKey: NSString(string: imageServerUrl)) {
+            self.image = cachedImage
+            return
+        }
+        
+        if let url = URL(string: imageServerUrl) {
+            URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+                
+                if error != nil {
+                    print("Loading image from URL error: \(error!.localizedDescription)")
+                    DispatchQueue.main.async {
+                        self.image = placeHolder
+                    }
+                    return
                 }
-            } else {
                 DispatchQueue.main.async {
-                    complition(nil)
+                    if let data = data {
+                        if let downloadedImage = UIImage(data: data) {
+                            imageCache.setObject(downloadedImage, forKey: NSString(string: imageServerUrl))
+                            self.image = downloadedImage
+                        }
+                    }
                 }
-            }
+            }).resume()
         }
     }
-    
 }
+

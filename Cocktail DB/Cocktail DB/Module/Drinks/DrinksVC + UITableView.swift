@@ -39,14 +39,11 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.cocktailNameLabel.text = section.drinks?[indexPath.row].name
         
-        let imageURL = section.drinks?[indexPath.row].imageURL
-        DispatchQueue.main.async {
-            self.presenter.displayDrinkImage(imageURL, cell.cocktailImage)
-        }
+        guard let imageURL = section.drinks?[indexPath.row].imageURL else { return UITableViewCell() }
+        cell.cocktailImage.loadImageFromURL(imageURL, placeHolder: nil)
+        
         return cell
     }
-    
-
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.section == self.presenter.allDrinksToDisplay.count - 1 && indexPath.section < restoredCategories.count {
@@ -65,11 +62,8 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
                     }
                 }
             }
-            
         }
-        
     }
-    
 }
 
 

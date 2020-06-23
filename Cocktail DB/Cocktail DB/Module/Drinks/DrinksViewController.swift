@@ -8,11 +8,6 @@
 
 import UIKit
 
-//struct RestoredCategories {
-//    var categoryName: String?
-//    var isCategoryLoaded: Bool?
-//}
-
 class DrinksViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -20,7 +15,7 @@ class DrinksViewController: UIViewController {
     let presenter = DrinksPresenter()
     
     var restoredCategories = [String?]()
-    var categoryTitles = [String?]() //remove it!!
+    var categoryTitles = [String?]() //****
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {

@@ -18,14 +18,4 @@ class DrinksPresenter {
             completion(drinks)
         }
     }
-    
-    func displayDrinkImage(_ imageURL: String?, _ imageView: UIImageView) {
-        guard let urlString = imageURL, let url = URL(string: urlString) else { return }
-        UIImage.loadImageFrom(url: url) { image in
-            if url.absoluteString == urlString {
-                imageView.image = image
-            }
-        }
-    }
-
 }
