@@ -11,12 +11,13 @@ import Foundation
 extension DrinksViewController {
     
     func displayDrinks() {
-        cleanAllDrinksArr()
+        removeAllDrinksFromArr()
         restoreSelectedCategories()
         if !restoredCategories.isEmpty {
             guard let firstCategoryToLoad = restoredCategories.first! else { return }
             loadCategoryDrinks(firstCategoryToLoad)
-            
+            restoredCategories.removeFirst()
+            print("restoredCategories.removeFirst() : \(restoredCategories)")
         }
         else {
             DispatchQueue.main.async {
@@ -27,7 +28,7 @@ extension DrinksViewController {
         }
     }
     
-    func cleanAllDrinksArr() {
+    func removeAllDrinksFromArr() {
         presenter.allDrinksToDisplay.removeAll()
     }
     

@@ -8,6 +8,11 @@
 
 import UIKit
 
+//struct RestoredCategories {
+//    var categoryName: String?
+//    var isCategoryLoaded: Bool?
+//}
+
 class DrinksViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!

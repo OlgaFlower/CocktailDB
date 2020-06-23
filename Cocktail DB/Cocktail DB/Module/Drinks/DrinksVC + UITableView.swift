@@ -55,11 +55,19 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
                 
                 if indexPath.row == itemsCount - 1 {
                     
-                    if self.presenter.allDrinksToDisplay.count < self.restoredCategories.count {
-                        let nextSection = indexPath.section + 1
-                        guard let nextCategory = self.restoredCategories[nextSection] else { return }
+                    if !self.restoredCategories.isEmpty {
+                        guard let nextCategory = self.restoredCategories.first! else { return }
+                        print("let nextCategory = self.restoredCategories.first! : \(nextCategory)")
+                        self.restoredCategories.removeFirst()
                         self.loadCategoryDrinks(nextCategory)
+                        
                     }
+                    
+//                    if self.presenter.allDrinksToDisplay.count < self.restoredCategories.count {
+//                        let nextSection = indexPath.section + 1
+//                        guard let nextCategory = self.restoredCategories[nextSection] else { return }
+//                        self.loadCategoryDrinks(nextCategory)
+//                    }
                 }
                 
             }
