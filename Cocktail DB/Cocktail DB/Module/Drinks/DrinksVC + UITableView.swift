@@ -21,8 +21,10 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    //*******
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return categoryTitles[section]
+//        return restoredCategories[section]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,12 +46,12 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
         if indexPath.section == self.presenter.allDrinksToDisplay.count - 1 && indexPath.section < restoredCategories.count {
-                print("indexPath.section = \(indexPath.section)")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            print("indexPath.section = \(indexPath.section)")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 guard let currentCategory = self.presenter.allDrinksToDisplay[indexPath.section] else { return }
                 guard let itemsCount = currentCategory.drinks?.count else { return }
                 
@@ -63,32 +65,10 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
                     }
                 }
             }
+            
         }
         
     }
-        
-        
-        
-        
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//            if tableView.visibleCells.contains(cell) {
-//
-//                if indexPath.row == itemsCount - 1 {
-//
-//                    if !self.restoredCategories.isEmpty {
-//                        guard let nextCategory = self.restoredCategories.first! else { return }
-//                        self.restoredCategories.removeFirst()
-//                        self.loadCategoryDrinks(nextCategory)
-//
-//                    }
-//                }
-//
-//            }
-//        }
-    
-    
-    
     
 }
 
