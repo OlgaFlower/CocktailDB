@@ -34,7 +34,7 @@ class DrinksFilterViewController: UIViewController {
     //MARK: - Setup VC
     func setup() {
         setupTableView()
-        setupNavBarItems()
+        setupNavBar()
         restoreSelectedCategories()
     }
     
@@ -45,12 +45,14 @@ class DrinksFilterViewController: UIViewController {
         tableView.allowsMultipleSelection = true
     }
     
-    func setupNavBarItems() {
-//    let viewName = UIBarButtonItem(title: "Drinks", style: .plain, target: self, action: nil)
-//    navigationItem.leftBarButtonItem = viewName
-//    let filter = UIBarButtonItem(image: UIImage(named: "filter.png"), style: .plain, target: self, action: #selector(showFilter))
-//    navigationItem.rightBarButtonItem = filter
-        
+    func setupNavBar() {
+        let backButton = UIBarButtonItem(image: UIImage(named: "back.png"), style: .plain, target: self, action: #selector(backTapped))
+        let emptyView = UIBarButtonItem(title: "  ", style: .plain, target: self, action: nil)
+        let viewName = UIBarButtonItem(title: "Filters", style: .plain, target: self, action: nil)
+        navigationItem.leftBarButtonItems = [backButton, emptyView, viewName]
+    }
+    
+    @objc func backTapped() {
         
     }
     

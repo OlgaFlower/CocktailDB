@@ -69,7 +69,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title=" " id="3Xa-AE-rEc">
-                        <barButtonItem key="backBarButtonItem" title=" " id="a4h-b9-n51"/>
+                        <barButtonItem key="backBarButtonItem" id="BXF-fO-RAk"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="wde-VG-cxH" id="PpY-JO-VLi"/>

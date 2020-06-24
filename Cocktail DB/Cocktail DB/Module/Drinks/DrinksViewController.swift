@@ -39,11 +39,6 @@ class DrinksViewController: UIViewController {
     }
     
     func setupNavBarItems() {
-//        navigationItem.backBarButtonItem = UIBarButtonItem(image: UIImage(named: "back.png"), style: .plain, target: nil, action: nil)
-        let customBackImage = UIImage(named: "back.png")
-        self.navigationController?.navigationBar.backIndicatorImage = customBackImage
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = customBackImage
-        
         let viewName = UIBarButtonItem(title: "Drinks", style: .plain, target: self, action: nil)
         navigationItem.leftBarButtonItem = viewName
         let filter = UIBarButtonItem(image: UIImage(named: "filter.png"), style: .plain, target: self, action: #selector(showFilter))
