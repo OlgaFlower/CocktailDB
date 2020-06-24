@@ -30,4 +30,7 @@ class DrinksPresenter: ConfigureDrinksCell {
         cell.displayCocktailNameLabel(text: cellData.name)
     }
     
+    func removeAllDrinksFromArr() {
+        allDrinksToDisplay.removeAll()
+    }
 }

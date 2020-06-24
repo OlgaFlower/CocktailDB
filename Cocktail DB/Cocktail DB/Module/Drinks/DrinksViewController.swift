@@ -14,6 +14,8 @@ class DrinksViewController: UIViewController {
     
     //MARK: - Properties
     let presenter = DrinksPresenter()
+    let defaultPresenter = DefaultConditionPresenter()
+    
     var restoredCategories = [String?]()
     var categoryTitles = [String?]()
     let defaults = UserDefaults.standard
@@ -21,14 +23,18 @@ class DrinksViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setup()
+        defaultPresenter.loadAllCategories { (categories) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        displayDrinks()
+        displayUserSelectedDrinks()
     }
     
     //MARK: - Setup VC methods
