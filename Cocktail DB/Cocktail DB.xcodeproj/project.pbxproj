@@ -147,7 +147,6 @@
 				8494C1CE24A0A9E6008619C5 /* DrinksVC + UITableView.swift */,
 				840E0258249FCAEC00D01B32 /* DrinksPresenter.swift */,
 				8453138124A308EA00F8E9C8 /* DrinksCell */,
-				8458D19E24A3B8AA002EDAE7 /* DefaultConditionPresenter.swift */,
 			);
 			path = Drinks;
 			sourceTree = "<group>";
@@ -155,6 +154,7 @@
 		84247FFD249FBF200008359F /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				8458D1A024A3C740002EDAE7 /* DefaultCondition */,
 				84247FFC249FBF090008359F /* Drinks */,
 				840E025A24A00B4F00D01B32 /* DrinksFilter */,
 			);
@@ -185,6 +185,14 @@
 				840E025D24A00C4100D01B32 /* DrinksFilterTableViewCell.swift */,
 			);
 			path = FilterCell;
+			sourceTree = "<group>";
+		};
+		8458D1A024A3C740002EDAE7 /* DefaultCondition */ = {
+			isa = PBXGroup;
+			children = (
+				8458D19E24A3B8AA002EDAE7 /* DefaultConditionPresenter.swift */,
+			);
+			path = DefaultCondition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

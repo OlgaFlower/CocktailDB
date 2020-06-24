@@ -24,16 +24,11 @@ class DrinksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        defaultPresenter.loadAllCategories { (categories) in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        setupDefaultCondition()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         displayUserSelectedDrinks()
     }
     
