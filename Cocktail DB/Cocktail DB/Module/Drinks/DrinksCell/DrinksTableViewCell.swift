@@ -19,6 +19,7 @@ class DrinksTableViewCell: UITableViewCell {
     @IBOutlet weak var cocktailImage: UIImageView!
     @IBOutlet weak var cocktailNameLabel: UILabel!
     
+    //MARK: - Lifcycle
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -35,5 +36,4 @@ extension DrinksTableViewCell: DrinksTableViewCellProtocol {
     func displayCocktailNameLabel(text: String?) {
         cocktailNameLabel.text = text
     }
-    
 }

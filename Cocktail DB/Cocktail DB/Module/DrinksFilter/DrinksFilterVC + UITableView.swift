@@ -9,6 +9,7 @@
 
 import UIKit
 
+//Table View
 extension DrinksFilterViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -23,13 +24,11 @@ extension DrinksFilterViewController: UITableViewDataSource, UITableViewDelegate
         
         if selectedCategories.contains(drinks[indexPath.row].category) {
             cell.accessoryType = .checkmark
-            
         } else {
             cell.accessoryType = .none
         }
         
         cell.categoryNameLabel.text = drinks[indexPath.row].category
-        
         return cell
     }
     
@@ -42,16 +41,12 @@ extension DrinksFilterViewController: UITableViewDataSource, UITableViewDelegate
             selectedCategories.removeAll { (selectedCategory) -> Bool in
                 selectedCategory == categories[indexPath.row].category
             }
-            print("After remove: \(selectedCategories)")
             tableView.reloadRows(at: [indexPath], with: .fade)
             
         } else {
-            //Add checkmark and selected category
+            //Add checkmark and update selected categories
             selectedCategories.append(categories[indexPath.row].category)
-            print("After add: \(selectedCategories)")
             tableView.reloadRows(at: [indexPath], with: .fade)
         }
     }
-    
-    
 }

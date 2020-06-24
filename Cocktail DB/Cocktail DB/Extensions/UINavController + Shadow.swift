@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Add shadow line to navigation bar
 extension UINavigationController {
     func displayNavbarShadow() {
         self.navigationBar.shadowImage = UIImage()

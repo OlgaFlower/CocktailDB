@@ -9,28 +9,29 @@
 import UIKit
 
 class DrinksViewController: UIViewController {
-    
+    //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK: - Properties
     let presenter = DrinksPresenter()
-//    weak var presenter: DrinksPresenter?
-    
     var restoredCategories = [String?]()
-    var categoryTitles = [String?]() //****
+    var categoryTitles = [String?]()
     let defaults = UserDefaults.standard
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         
+        setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         displayDrinks()
-        print("Restored catrgoties \(restoredCategories)")
     }
     
+    //MARK: - Setup VC methods
     func setup() {
         setupNavBarItems()
         setupTableView()
@@ -50,6 +51,7 @@ class DrinksViewController: UIViewController {
         tableView.removeSeparator()
     }
     
+    //MARK: - Actions
     @objc func showFilter() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let filterVC = storyboard.instantiateViewController(withIdentifier: "DrinksFilterViewController") as! DrinksFilterViewController

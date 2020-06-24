@@ -12,11 +12,11 @@ class DrinksFilterPresenter {
     
     var drinksGroup: DrinksGroup?
     
+    //Load all drinks categories
     func loadCocktailGroup(completion: @escaping (DrinksGroup) -> Void) {
         NetworkManager.shared.fetchDrinksGroup { [weak self] group in
             self?.drinksGroup = group
             completion(group)
         }
     }
-    
 }

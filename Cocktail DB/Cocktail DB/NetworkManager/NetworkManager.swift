@@ -12,6 +12,7 @@ final class NetworkManager {
     
     static let shared = NetworkManager()
     
+    //Fetch drinks categories list
     func fetchDrinksGroup(completion: @escaping (DrinksGroup) -> Void) {
         guard let url = URL(string: SourceApi.categories.rawValue) else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -25,15 +26,16 @@ final class NetworkManager {
             do {
                 let categories = try JSONDecoder().decode(DrinksGroup.self, from: data)
                 completion(categories)
-                } catch {
-                    print("API: Error JSON decoding")
-                }
+            } catch {
+                print("API: Error JSON decoding")
+            }
         }.resume()
     }
     
+    //Fetch drinks list of the specific category
     func fetchDrinksByCategory(_ category: String, completion: @escaping (Drinks) -> Void) {
-        
         var urlString = SourceApi.drinks.rawValue
+        
         if category.contains(" ") {
             urlString += category.replacingOccurrences(of: " ", with: "_")
         } else {
@@ -41,7 +43,6 @@ final class NetworkManager {
         }
         
         guard let url = URL(string: urlString) else { return }
-        print(url)
         URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil {
                 print("API: \(error!.localizedDescription)")
@@ -53,9 +54,9 @@ final class NetworkManager {
             do {
                 let drinks = try JSONDecoder().decode(Drinks.self, from: data)
                 completion(drinks)
-                } catch {
-                    print("API: Error JSON decoding")
-                }
+            } catch {
+                print("API: Error JSON decoding")
+            }
         }.resume()
     }
 }

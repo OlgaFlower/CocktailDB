@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Drinks' list of the specific category
 struct Drinks: Codable {
     var drinks: [DrinkDescription]?
 }

@@ -8,15 +8,15 @@
 
 import UIKit
 
-// creating an imageCache private instance
+//ImageCache private instance
 private  let imageCache = NSCache<NSString, UIImage>()
 
-
+//Load image from URL
 extension UIImageView {
     
     func loadImageFromURL(_ URLString: String, placeHolder: UIImage?) {
-        
         self.image = nil
+        
         //Handle possibility to have space in (imageURL's) image name
         let imageServerUrl = URLString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         if let cachedImage = imageCache.object(forKey: NSString(string: imageServerUrl)) {

@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Table View
 extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -21,10 +22,8 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    //*******
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return categoryTitles[section]
-//        return restoredCategories[section]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,8 +59,5 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
-    
-    
 }
-
 

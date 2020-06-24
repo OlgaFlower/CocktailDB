@@ -10,10 +10,7 @@ import UIKit
 
 class DrinksFilterTableViewCell: UITableViewCell {
 
+    //MARK: - Outlets
     @IBOutlet weak var categoryNameLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 
 }

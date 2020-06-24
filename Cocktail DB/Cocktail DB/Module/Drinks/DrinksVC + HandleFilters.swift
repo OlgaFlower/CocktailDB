@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Handle displaying filtered gategories
 extension DrinksViewController {
     
     func displayDrinks() {
@@ -15,16 +16,12 @@ extension DrinksViewController {
         restoreSelectedCategories()
         if !restoredCategories.isEmpty {
             guard let firstCategoryToLoad = restoredCategories.first! else { return }
-            restoredCategories.removeFirst()
             loadCategoryDrinks(firstCategoryToLoad)
+            restoredCategories.removeFirst()
         }
         else {
-//            DispatchQueue.main.async {
-                self.tableView.reloadData()
-//            }
-            
+            self.tableView.reloadData()
             return
-            
         }
     }
     
@@ -35,16 +32,14 @@ extension DrinksViewController {
     func restoreSelectedCategories() {
         let categories = self.defaults.object(forKey: "selectedCategories") as? [String] ?? [String]()
         self.restoredCategories = categories.sorted()
-        self.categoryTitles = restoredCategories
+        self.categoryTitles = categories.sorted()
     }
     
     func loadCategoryDrinks(_ category: String) {
         presenter.loadDrinks(category) { [weak self] drinks in
             DispatchQueue.main.async {
-            self?.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
     }
-    
-
 }
