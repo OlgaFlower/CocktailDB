@@ -11,7 +11,7 @@ import UIKit
 extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return presenter.allDrinksToDisplay.count
+        return presenter.allDrinksToDisplay.count 
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -32,28 +32,24 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell", for: indexPath) as! DrinksTableViewCell
-        guard let section = presenter.allDrinksToDisplay[indexPath.section] else { return UITableViewCell() }
-        cell.selectionStyle = .none
         
-        cell.cocktailNameLabel.text = section.drinks?[indexPath.row].name
+        guard let cellData = presenter.allDrinksToDisplay[indexPath.section]?.drinks?[indexPath.row] else { return UITableViewCell() }
         
-        guard let imageURL = section.drinks?[indexPath.row].imageURL else { return UITableViewCell() }
-        cell.cocktailImage.loadImageFromURL(imageURL, placeHolder: nil)
+        presenter.configureDrinksCell(cell, cellData)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.section == self.presenter.allDrinksToDisplay.count - 1 && indexPath.section < restoredCategories.count {
-            print("indexPath.section = \(indexPath.section)")
+        let count = presenter.allDrinksToDisplay.count
+        if indexPath.section == count - 1 && indexPath.section < restoredCategories.count {
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 guard let currentCategory = self.presenter.allDrinksToDisplay[indexPath.section] else { return }
-                guard let itemsCount = currentCategory.drinks?.count else { return }
+                guard let categoryItemsCount = currentCategory.drinks?.count else { return }
                 
-                if indexPath.row == itemsCount - 1 {
-                    print("indexPath.row = \(indexPath.row)")
+                if indexPath.row == categoryItemsCount - 1 {
                     
                     if !self.restoredCategories.isEmpty {
                         guard let nextCategory = self.restoredCategories[indexPath.section] else { return }
@@ -64,6 +60,8 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
+    
+    
 }
 
 

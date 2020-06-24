@@ -13,6 +13,7 @@ class DrinksViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let presenter = DrinksPresenter()
+//    weak var presenter: DrinksPresenter?
     
     var restoredCategories = [String?]()
     var categoryTitles = [String?]() //****

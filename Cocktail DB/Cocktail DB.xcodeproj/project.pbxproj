@@ -143,8 +143,8 @@
 				84247FF7249FB7B80008359F /* DrinksViewController.swift */,
 				849400AA24A1177E004FE3B6 /* DrinksVC + HandleFilters.swift */,
 				8494C1CE24A0A9E6008619C5 /* DrinksVC + UITableView.swift */,
-				84247FFA249FBE750008359F /* DrinksTableViewCell.swift */,
 				840E0258249FCAEC00D01B32 /* DrinksPresenter.swift */,
+				8453138124A308EA00F8E9C8 /* DrinksCell */,
 			);
 			path = Drinks;
 			sourceTree = "<group>";
@@ -166,6 +166,14 @@
 				8494C1CC24A0A847008619C5 /* UINavController + Shadow.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8453138124A308EA00F8E9C8 /* DrinksCell */ = {
+			isa = PBXGroup;
+			children = (
+				84247FFA249FBE750008359F /* DrinksTableViewCell.swift */,
+			);
+			path = DrinksCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

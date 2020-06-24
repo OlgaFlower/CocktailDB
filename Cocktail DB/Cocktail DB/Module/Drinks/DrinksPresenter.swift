@@ -8,7 +8,12 @@
 
 import UIKit
 
-class DrinksPresenter {
+protocol ConfigureDrinksCell: class {
+    func configureDrinksCell(_ cell: DrinksTableViewCellProtocol, _ cellData: DrinkDescription)
+}
+
+
+class DrinksPresenter: ConfigureDrinksCell {
     
     var allDrinksToDisplay = [Drinks?]()
     
@@ -18,4 +23,10 @@ class DrinksPresenter {
             completion(drinks)
         }
     }
+    
+    func configureDrinksCell(_ cell: DrinksTableViewCellProtocol, _ cellData: DrinkDescription) {
+        cell.displayCocktailImage(imageURL: cellData.imageURL)
+        cell.displayCocktailNameLabel(text: cellData.name)
+    }
+    
 }

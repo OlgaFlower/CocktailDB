@@ -19,7 +19,10 @@ extension DrinksViewController {
             loadCategoryDrinks(firstCategoryToLoad)
         }
         else {
-            tableView.reloadData()
+//            DispatchQueue.main.async {
+                self.tableView.reloadData()
+//            }
+            
             return
             
         }
