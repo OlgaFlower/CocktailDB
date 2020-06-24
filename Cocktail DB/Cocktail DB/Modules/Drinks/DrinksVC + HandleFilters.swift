@@ -11,6 +11,7 @@ import Foundation
 //Handle displaying user selected gategories
 extension DrinksViewController {
     
+    //Default config
     func setupDefaultCondition() {
         if !defaultPresenter.isDefaultCondition {
             defaultPresenter.loadAllCategories { defaultCategories in
@@ -22,22 +23,30 @@ extension DrinksViewController {
         }
     }
 
+    //User config
     func displayUserSelectedDrinks() {
         presenter.removeAllDrinksFromArr()
         restoreSelectedCategories()
         prepareToDisplayDrinksList()
+        
     }
     
     func prepareToDisplayDrinksList() {
         if !restoredCategories.isEmpty {
-            guard let firstCategoryToLoad = restoredCategories.first! else { return }
-            loadCategoryDrinks(firstCategoryToLoad)
+            loadFirstCategory()
             restoredCategories.removeFirst()
         }
         else {
             self.tableView.reloadData()
             return
         }
+    }
+    
+    func loadFirstCategory() {
+        if restoredCategories.first != nil {
+            loadCategoryDrinks(restoredCategories.first! ?? "")
+        }
+        
     }
     
     func restoreSelectedCategories() {

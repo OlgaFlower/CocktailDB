@@ -36,7 +36,7 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aHn-0P-qFP">
                                                     <rect key="frame" x="15" y="5" width="90" height="90.5"/>
-                                                    <color key="backgroundColor" red="0.92397100639999996" green="0.68750005059999997" blue="0.29709652609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="m0G-AQ-ySy"/>
                                                         <constraint firstAttribute="width" constant="90" id="wgo-eB-hew"/>

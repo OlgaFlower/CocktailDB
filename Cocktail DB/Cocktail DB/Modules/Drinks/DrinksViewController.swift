@@ -25,11 +25,16 @@ class DrinksViewController: UIViewController {
         super.viewDidLoad()
         setup()
         setupDefaultCondition()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         displayUserSelectedDrinks()
+        
     }
     
     //MARK: - Setup VC methods
@@ -43,6 +48,9 @@ class DrinksViewController: UIViewController {
         navigationItem.leftBarButtonItem = viewName
         let filter = UIBarButtonItem(image: UIImage(named: "filter.png"), style: .plain, target: self, action: #selector(showFilter))
         navigationItem.rightBarButtonItem = filter
+        if let font = UIFont(name: "Roboto-Regular", size: 16) {
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: font]
+        }
         self.navigationController?.displayNavbarShadow()
     }
     

@@ -52,16 +52,18 @@ class DrinksFilterViewController: UIViewController {
         navigationItem.leftBarButtonItems = [backButton, emptyView, viewName]
     }
     
-    @objc func backTapped() {
-        
-    }
-    
     //MARK: - Restore previously selected categories
     func restoreSelectedCategories() {
         selectedCategories = defaults.object(forKey: "selectedCategories") as? [String] ?? [String]()
     }
     
     //MARK: - Actions
+    //Back button
+    @objc func backTapped() {
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+    //Apply button
     @IBAction func applyButtonTapped(_ sender: Any) {
         defaults.set(selectedCategories, forKey: "selectedCategories")
         _ = navigationController?.popViewController(animated: true)
