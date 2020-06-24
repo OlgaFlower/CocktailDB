@@ -31,9 +31,10 @@ class DrinksFilterViewController: UIViewController {
         }
     }
     
-    //MARK: - Setup VC methods
+    //MARK: - Setup VC
     func setup() {
         setupTableView()
+        setupNavBarItems()
         restoreSelectedCategories()
     }
     
@@ -42,6 +43,15 @@ class DrinksFilterViewController: UIViewController {
         tableView.dataSource = self
         tableView.removeSeparator()
         tableView.allowsMultipleSelection = true
+    }
+    
+    func setupNavBarItems() {
+//    let viewName = UIBarButtonItem(title: "Drinks", style: .plain, target: self, action: nil)
+//    navigationItem.leftBarButtonItem = viewName
+//    let filter = UIBarButtonItem(image: UIImage(named: "filter.png"), style: .plain, target: self, action: #selector(showFilter))
+//    navigationItem.rightBarButtonItem = filter
+        
+        
     }
     
     //MARK: - Restore previously selected categories
