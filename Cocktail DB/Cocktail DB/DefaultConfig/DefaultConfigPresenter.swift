@@ -1,5 +1,5 @@
 //
-//  DefaultConditionPresenter.swift
+//  DefaultConfigPresenter.swift
 //  Cocktail DB
 //
 //  Created by Olha Bereziuk on 24.06.2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DefaultConditionPresenter {
+class DefaultConfigPresenter {
     
     //MARK: - Properties
     var categories = [String?]()

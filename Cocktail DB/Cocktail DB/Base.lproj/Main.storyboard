@@ -6,6 +6,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!-- -->
         <scene sceneID="tne-QT-ifu">
@@ -35,8 +43,8 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1O-9Q-848">
-                                                    <rect key="frame" x="113" y="50" width="232" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="113" y="41" width="232" height="19"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -44,10 +52,10 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="aHn-0P-qFP" secondAttribute="bottom" constant="25" id="2Pj-aj-17u"/>
                                                 <constraint firstItem="I1O-9Q-848" firstAttribute="leading" secondItem="aHn-0P-qFP" secondAttribute="trailing" constant="8" id="7hB-Xe-Mf1"/>
-                                                <constraint firstItem="I1O-9Q-848" firstAttribute="centerY" secondItem="6re-cm-OOk" secondAttribute="centerY" id="Hmi-ng-Dev"/>
                                                 <constraint firstItem="aHn-0P-qFP" firstAttribute="top" secondItem="6re-cm-OOk" secondAttribute="top" constant="5" id="JZ9-vC-DhH"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="I1O-9Q-848" secondAttribute="trailing" constant="15" id="Vol-0S-Wpc"/>
                                                 <constraint firstItem="aHn-0P-qFP" firstAttribute="leading" secondItem="6re-cm-OOk" secondAttribute="leading" constant="15" id="n0y-LQ-uy1"/>
+                                                <constraint firstItem="I1O-9Q-848" firstAttribute="top" secondItem="6re-cm-OOk" secondAttribute="topMargin" constant="30" id="vGl-JB-vyk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -92,16 +100,16 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="filterCell" id="ZWQ-1a-RvN" customClass="DrinksFilterTableViewCell" customModule="Cocktail_DB" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="74.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZWQ-1a-RvN" id="zxu-uh-9wI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqp-iD-C22">
-                                                    <rect key="frame" x="23" y="33" width="329" height="20"/>
+                                                    <rect key="frame" x="23" y="33" width="329" height="19.5"/>
                                                     <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -126,7 +134,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="tKa-Zk-zg6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                 <state key="normal" title="APPLY">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>

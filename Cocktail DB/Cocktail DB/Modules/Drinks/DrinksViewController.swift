@@ -14,7 +14,7 @@ class DrinksViewController: UIViewController {
     
     //MARK: - Properties
     let presenter = DrinksPresenter()
-    let defaultPresenter = DefaultConditionPresenter()
+    let defaultPresenter = DefaultConfigPresenter()
     
     var restoredCategories = [String?]()
     var categoryTitles = [String?]()
