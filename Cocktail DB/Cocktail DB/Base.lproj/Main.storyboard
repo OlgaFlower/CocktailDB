@@ -37,7 +37,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1O-9Q-848">
                                                     <rect key="frame" x="113" y="50" width="232" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -50,6 +50,7 @@
                                                 <constraint firstItem="aHn-0P-qFP" firstAttribute="leading" secondItem="6re-cm-OOk" secondAttribute="leading" constant="15" id="n0y-LQ-uy1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         <connections>
                                             <outlet property="cocktailImage" destination="aHn-0P-qFP" id="rNv-JY-crw"/>
                                             <outlet property="cocktailNameLabel" destination="I1O-9Q-848" id="u2T-ca-qjp"/>
@@ -85,30 +86,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mV6-4S-R57">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="589"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="filterCell" id="ZWQ-1a-RvN" customClass="DrinksFilterTableViewCell" customModule="Cocktail_DB" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="81"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZWQ-1a-RvN" id="zxu-uh-9wI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqp-iD-C22">
-                                                    <rect key="frame" x="23" y="36" width="329" height="20"/>
+                                                    <rect key="frame" x="23" y="33" width="329" height="20"/>
+                                                    <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Dqp-iD-C22" secondAttribute="bottom" constant="25" id="JU3-A6-EbK"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Dqp-iD-C22" secondAttribute="trailing" constant="8" id="RDB-BX-TrK"/>
-                                                <constraint firstItem="Dqp-iD-C22" firstAttribute="top" secondItem="zxu-uh-9wI" secondAttribute="topMargin" constant="25" id="jmR-F9-N1Q"/>
+                                                <constraint firstItem="Dqp-iD-C22" firstAttribute="top" secondItem="zxu-uh-9wI" secondAttribute="topMargin" constant="22" id="jmR-F9-N1Q"/>
                                                 <constraint firstItem="Dqp-iD-C22" firstAttribute="leading" secondItem="zxu-uh-9wI" secondAttribute="leadingMargin" constant="8" id="wfS-mh-YHg"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         <connections>
                                             <outlet property="categoryNameLabel" destination="Dqp-iD-C22" id="l7Z-QF-OCr"/>
                                         </connections>
@@ -116,7 +119,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teH-48-RKv">
-                                <rect key="frame" x="27" y="594" width="321" height="53"/>
+                                <rect key="frame" x="27" y="596" width="321" height="53"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="tKa-Zk-zg6"/>
@@ -132,7 +135,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Kvt-fn-rYx" firstAttribute="bottom" secondItem="teH-48-RKv" secondAttribute="bottom" constant="20" id="cxd-h9-1hf"/>
+                            <constraint firstItem="Kvt-fn-rYx" firstAttribute="bottom" secondItem="teH-48-RKv" secondAttribute="bottom" constant="18" id="cxd-h9-1hf"/>
                             <constraint firstItem="mV6-4S-R57" firstAttribute="trailing" secondItem="Kvt-fn-rYx" secondAttribute="trailing" id="ddj-5Z-SZP"/>
                             <constraint firstItem="mV6-4S-R57" firstAttribute="top" secondItem="Kvt-fn-rYx" secondAttribute="top" id="lhe-lQ-bns"/>
                             <constraint firstItem="teH-48-RKv" firstAttribute="top" secondItem="mV6-4S-R57" secondAttribute="bottom" constant="5" id="qV7-r6-cuI"/>
