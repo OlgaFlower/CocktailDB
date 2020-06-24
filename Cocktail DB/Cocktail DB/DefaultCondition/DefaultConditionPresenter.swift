@@ -1,5 +1,5 @@
 //
-//  DefaultCondition.swift
+//  DefaultConditionPresenter.swift
 //  Cocktail DB
 //
 //  Created by Olha Bereziuk on 24.06.2020.

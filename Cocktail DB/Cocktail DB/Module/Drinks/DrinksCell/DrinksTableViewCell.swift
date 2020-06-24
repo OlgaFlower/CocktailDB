@@ -22,7 +22,6 @@ class DrinksTableViewCell: UITableViewCell {
     //MARK: - Lifcycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         selectionStyle = .none
     }
 }
