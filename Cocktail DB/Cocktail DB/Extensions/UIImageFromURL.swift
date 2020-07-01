@@ -16,9 +16,9 @@ extension UIImageView {
     
     func loadImageFromURL(_ URLString: String, placeHolder: UIImage?) {
         self.image = nil
-        
+        let url = URLString + "?=/preview (100x100 pixels)"
         //Handle possibility to have space in (imageURL's) image name
-        let imageServerUrl = URLString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let imageServerUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         if let cachedImage = imageCache.object(forKey: NSString(string: imageServerUrl)) {
             self.image = cachedImage
             return
