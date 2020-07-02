@@ -41,18 +41,18 @@ extension DrinksViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let count = presenter.allDrinksToDisplay.count
-        if indexPath.section == count - 1 && indexPath.section < restoredCategories.count {
+        let sectionCount = presenter.allDrinksToDisplay.count
+        if indexPath.section == sectionCount - 1 && indexPath.section < restoredCategories.count {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                guard let currentCategory = self.presenter.allDrinksToDisplay[indexPath.section] else { return }
-                guard let categoryItemsCount = currentCategory.drinks?.count else { return }
+                guard let currentSection = self.presenter.allDrinksToDisplay[indexPath.section] else { return }
+                guard let sectionItemsCount = currentSection.drinks?.count else { return }
                 
-                if indexPath.row == categoryItemsCount - 1 {
+                if indexPath.row == sectionItemsCount - 1 {
                     
                     if !self.restoredCategories.isEmpty {
-                        guard let nextCategory = self.restoredCategories[indexPath.section] else { return }
-                        self.loadCategoryDrinks(nextCategory)
+                        guard let nextSection = self.restoredCategories[indexPath.section] else { return }
+                        self.loadCategoryDrinks(nextSection)
                         
                     }
                 }
